@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Embed</title>
+    <style>
+        body { background: black; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        video { width: 90%; max-width: 800px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <video controls autoplay id="videoPlayer"></video>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('id');
+        const videos = {
+            "video1": "https://1a-1791.com/video/s8/2/6/O/X/Q/6OXQu.aaa.mp4",
+            "video2": "https://otraweb.com/videos/sample.mp4"
+        };
+        if (videos[videoId]) {
+            document.getElementById('videoPlayer').src = videos[videoId];
+        } else {
+            document.body.innerHTML = "<h1 style='color:white'>Video no encontrado</h1>";
+        }
+    </script>
+</body>
+</html>
